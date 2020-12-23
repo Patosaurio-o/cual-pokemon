@@ -14,7 +14,7 @@ $('document').ready(function() {
       let  peso = pokemon.weight;
       let list = '<span><b>tipo:</b>';
       for(let t=0;t<pokemon.types.length;t++){
-        list += ' &curren;' + pokemon.types[t].type.name + '<br>';
+        list += ` &curren;${pokemon.types[t].type.name}<br>`;
       }
       list += '</span>'
       $('#mostar-pokemon').html(

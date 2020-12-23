@@ -16,7 +16,7 @@
   text-align: center;
 }
 #mostar-pokemon img {
-  border: 3px solid black;
+  border: 3px solid rgb(250, 0, 0);
   border-radius: 10px;
   padding: 5px;
   position: absolute;
@@ -26,7 +26,6 @@
   margin-top: 180px;
   margin-left: 0px;
 }
-
 h1 {
   margin: 20px;
 }
@@ -58,7 +57,6 @@ h1 {
  .make-me-sticky {
   position: -webkit-sticky;
 	position: sticky;
-	top: 0;
-    
+	top: 0;  
   padding: 0 15px;
 }
