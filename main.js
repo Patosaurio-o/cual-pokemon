@@ -1,14 +1,13 @@
 $('document').ready(function() {
   for(let i=1; i <= 151; i++){
-      $('#poke-ball').append(
-        `<div class="poke-algo">
-          <img id="${i}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png"></img>
-        </div>`
-      );
+    $('#poke-ball').append(
+      `<div class="poke-algo">
+        <img id="${i}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${i}.png"></img>
+      </div>`
+    );
   }
   $('img').on('click', function(){
     let pokeId = $(this).attr('id');
-    console.log(pokeId);
     $.get(`https://pokeapi.co/api/v2/pokemon/${pokeId}/`, function(pokemon){
       let nombre = pokemon.name;
       let altura = pokemon.height;
@@ -19,13 +18,15 @@ $('document').ready(function() {
       }
       list += '</span>'
       $('#mostar-pokemon').html(
-        `<p class="mostrarNombre">${nombre}</p>
-        <img class="elejido" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokeId}.png"></img>
+        `<img class="elejido" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokeId}.png"></img>
+        <div id="datos">
+        <p class="mostrarNombre">${nombre}</p>
         ${list}
-        <span><b>Altura:</b> ${altura}</span><br>
-        <span><b>peso:</b> ${peso}</span>  
-        `)
-      console.log(nombre);
+        <span><b>Altura:</b> ${altura}</span>
+        <br>
+        <span><b>peso:</b> ${peso}</span>
+        </div>`
+      )
     });  
   }) 
 }); 
